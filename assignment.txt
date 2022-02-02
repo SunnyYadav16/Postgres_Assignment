@@ -1,0 +1,28 @@
+Q-1 SELECT count(*)
+	FROM employeeinfo
+	WHERE department = 'Admin';
+
+Q-2 SELECT LEFT(emplname, 4) as Left_Four_Letters 
+	FROM employeeinfo;
+
+Q-3 SELECT *
+	FROM Employeeposition
+	WHERE salary between 50000 and 100000;
+
+Q-4 SELECT *
+	FROM Employeeinfo
+	WHERE empfname like 'S%';
+
+Q-5 SELECT *
+    FROM employeeposition 
+    ORDER BY salary DESC 
+    FETCH FIRST 5 ROW ONLY;
+
+Q-6 SELECT *
+	FROM employeeinfo
+	WHERE empfname NOT IN ('Sanjay', 'Sonia');
+
+Q-7 SELECT department, count(*) 
+	FROM employeeinfo 
+	GROUP BY department 
+	ORDER BY count;
