@@ -1,0 +1,48 @@
+Q-1 Write a query to fetch the number of employees working in the department ‘Admin’
+
+	SELECT count(*)
+	FROM employeeinfo
+	WHERE department = 'Admin';
+
+
+Q-2  Write a query to retrieve the first four characters of  EmpLname from the EmployeeInfo table.
+	
+	SELECT LEFT(emplname, 4) as Left_Four_Letters 
+	FROM employeeinfo;
+
+
+Q-3 Write q query to find all the employees whose salary is between 50000 to 100000.
+	
+	SELECT *
+	FROM Employeeposition
+	WHERE salary between 50000 and 100000;
+
+
+Q-4 Write a query to find the names of employees that begin with ‘S’
+	
+	SELECT *
+	FROM Employeeinfo
+	WHERE empfname like 'S%';
+
+
+Q-5 Write a query to fetch top N records order by salary. (ex. top 5 records)
+	
+	SELECT *
+    	FROM employeeposition 
+    	ORDER BY salary DESC 
+    	FETCH FIRST 5 ROW ONLY;
+
+
+Q-6 Write a query to fetch details of all employees excluding the employees with first names, “Sanjay” and “Sonia” from the EmployeeInfo table.
+	
+	SELECT *
+	FROM employeeinfo
+	WHERE empfname NOT IN ('Sanjay', 'Sonia');
+
+
+Q-7 Write a query to fetch the department-wise count of employees sorted by department’s count in ascending order.
+	
+	SELECT department, count(*) 
+	FROM employeeinfo 
+	GROUP BY department 
+	ORDER BY count;
